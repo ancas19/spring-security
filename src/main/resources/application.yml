@@ -1,0 +1,46 @@
+## Server Configuration
+server:
+  port: ${APP_PORT}
+  servlet:
+    context-path:  ${CONTEXT_PATH}
+## Spring Configuration
+springdoc:
+  swagger-ui:
+    path: /swagger-ui/index.html
+
+spring:
+  threads:
+    virtual:
+      enabled: true
+  jpa:
+    show-sql: ${SHOW_SQL}
+    hibernate:
+      ddl-auto: ${HIBERNATE_DDL_AUTO}
+  datasource:
+    hikari:
+      connection-timeout: 20000
+      minimum-idle: 10
+      maximum-pool-size: 10
+      idle-timeout: 10000
+      max-lifetime: 1000
+      auto-commit: true
+
+## Logging Configuration
+logging:
+  level:
+    root: ${LOGGING_LEVEL}
+    org.springframework.web: ${LOGGING_LEVEL}
+    org.hibernate.dialect: ${LOGGING_LEVEL}
+    org.hibernate.SQL: ${LOGGING_LEVEL}
+    org.hibernate.type.descriptor.sql.BasicBinder: ${LOGGING_LEVEL}
+## Postgres database configuration - Libreria CleanArchitecture:Database
+postgres:
+  driverClassName: org.postgresql.Driver
+  dialect: org.hibernate.dialect.PostgreSQLDialect
+  url: jdbc:postgresql://${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DB}
+  user: ${POSTGRES_USER}
+  pass: ${POSTGRES_PASSWORD}
+
+jwtKey:
+  privateKeyPath: ${JWT_PRIVATE_KEY_PATH}
+  publicKeyPath: ${JWT_PUBLIC_KEY_PATH}
