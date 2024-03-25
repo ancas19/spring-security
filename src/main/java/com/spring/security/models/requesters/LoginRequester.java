@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Builder
 @Getter
 @Setter
-public class LoginDTORequester implements Serializable {
+public class LoginRequester implements Serializable {
     @NotNull
     @Email
     private String email;
