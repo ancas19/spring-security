@@ -1,4 +1,4 @@
-package com.spring.security.models.dtos;
+package com.spring.security.models.requesters;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
@@ -12,7 +12,7 @@ import java.io.Serializable;
 @Builder
 @Getter
 @Setter
-public class LoginDTO implements Serializable {
+public class LoginDTORequester implements Serializable {
     @NotNull
     @Email
     private String email;
